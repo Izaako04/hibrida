@@ -1,9 +1,42 @@
-img {
-    width: 100vw;
-    height: 30vh;
-    object-fit: cover;
+ion-header {
+  ion-toolbar {
+      --padding-start: 16px;
+      --padding-end: 16px;
+      ion-title {
+          max-width: 40vh;
+          ion-label {
+              ion-text {
+                  font-size: 1rem;
+              }
+              p {
+                  ion-text {
+                      font-size: 1.3rem !important;
+                  }
+              }
+          }
+      }
+      ion-avatar {
+          height: 2.5rem;
+          width: 2.5rem;
+          border: 1px solid var(--ion-color-tertiary);
+          img {
+              max-width: 100%;
+          }
+      }
+  }
 }
 
-ion-button {
-    margin: 0 auto;
-}
+ion-slides {
+    height: 200px; /* Ajusta la altura del carrusel */
+  }
+  
+  ion-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  img {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
