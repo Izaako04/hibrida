@@ -18,7 +18,7 @@ bootstrapApplication(AppComponent, {
     provideRouter(routes, withPreloading(PreloadAllModules)),
 
      /* Inyecte los módulos de AngularFire */
-    provideFirebaseApp(() => initializeApp(firebaseConfig)),
-    provideFirestore(() => getFirestore()),
+     provideFirebaseApp(() => initializeApp(firebaseConfig)),
+     provideFirestore(() => getFirestore()),
   ],
 });
