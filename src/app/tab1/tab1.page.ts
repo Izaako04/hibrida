@@ -22,17 +22,16 @@ export class Tab1Page {
 
   // Sugerencias para las predicciones
   suggestions: { [key: string]: string } = {
-    Angry:
-      'Anger can be difficult to manage. Try to practice relaxation techniques.',
-    Disgust:
-      'Disgust can be triggered by many things. Consider deep breathing exercises.',
-    Fear: 'Fear is a natural response. Exposure therapy may help in reducing its impact.',
-    Happy: 'Happiness is great! Keep doing things that bring you joy.',
-    Neutral:
-      'Neutral emotions are often a sign of balance. Take this moment to relax.',
-    Sad: 'Sadness is part of life. Try reaching out to a friend or counselor.',
-    Surprise:
-      'Surprise can be exciting! Embrace the moment and see what happens next.',
+    Barroco: 
+      'El Barroco es un estilo artístico caracterizado por su dramatismo, gran detalle y movimiento dinámico. Surgió en Europa durante el siglo XVII.',
+    Cubismo: 
+      'El Cubismo es una corriente de arte moderna que fragmenta las formas en planos geométricos, popularizada por artistas como Picasso y Braque.',
+    Renacimiento: 
+      'El Renacimiento fue un movimiento cultural y artístico de los siglos XV y XVI, centrado en la humanidad, la ciencia y el redescubrimiento del arte clásico.',
+    Postimpresionismo: 
+      'El Postimpresionismo es una evolución del impresionismo, con un enfoque en el simbolismo, las emociones y el uso experimental del color.',
+    ArteNaif: 
+      'El Arte Naif se caracteriza por su estilo ingenuo, colores vibrantes y una perspectiva simplificada, que a menudo ignora las reglas tradicionales del arte.'
   };
 
   @ViewChild('image', { static: false }) imageElement!: ElementRef<HTMLImageElement>;
@@ -46,12 +45,12 @@ export class Tab1Page {
   constructor(private teachablemachine: TeachablemachineService) {
     addIcons({ cloudUploadOutline, analyticsOutline });
   }
-
+  
   async predict() {
     try {
       const image = this.imageElement.nativeElement;
       this.predictions = await this.teachablemachine.predict(image);
-
+      console.log('Predicciones:', this.predictions);
       if (this.predictions?.length > 0) {
         this.topPrediction = this.predictions.reduce((max, current) =>
           current.probability > max.probability ? current : max
@@ -62,7 +61,7 @@ export class Tab1Page {
       alert('Error al realizar la predicción.');
     }
   }
-
+  
   async ngOnInit() {
     await this.teachablemachine.loadModel();
     this.classLabels = this.teachablemachine.getClassLabels();

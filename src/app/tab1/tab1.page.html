@@ -1,24 +1,51 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="custom-content">
 
+  <div class="background-container">
+    <img src="assets/imgs/fondo.jpg" alt="Fondo" class="background-image" />
+  </div>
+  <style>
+    .background-container {
+      width: 100%;
+      height: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+  
+    .background-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    .green-bar {
+      background-color: green;
+      height: 60px;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  
+  </style>
   <ion-header class="ion-no-border">
     <ion-toolbar color="primary">
       <ion-title mode="md" class="ion-no-padding">
         <ion-label>
-          <ion-text color="tertiary">Detector de Arte!</ion-text>
+          <ion-text color="tertiary" >Detector de Arte!</ion-text>
           <p><ion-text color="white"><strong>IA-Art DETECTOR</strong></ion-text></p>
         </ion-label>
       </ion-title>
-      <ion-avatar slot="end">
-        <img src="assets/imgs/img.png" />
-      </ion-avatar>
     </ion-toolbar>
   </ion-header>
 
   <!-- MENSAJE INICIAL - Solo se muestra si no se ha subido una imagen -->
   <ion-card *ngIf="!imageReady()">
-    <ion-card-content>
+    <ion-card-content style="text-align: center;">
       <h1 class="message">Te ayudamos a categorizar tu arte!</h1>
-      <img src="assets/images/imagen.jpg" alt="Imagen" class="imagen"/>
+      <div style="text-align: center;" padding-top="20px" >
+        <img src="assets/imgs/pintando.jpg" alt="Imagen" class="imagen" width="500" height="300" />
+      </div>
       <p class="submessage">Sube una foto artistica y prediciremos de que corrientes tomaste influencia!</p>
     </ion-card-content>
   </ion-card>
@@ -42,7 +69,8 @@
   />
 
   <!-- MOSTRAR IMAGEN SUBIDA - Solo se muestra si la imagen está lista -->
-  <div *ngIf="imageReady()">
+  <div *ngIf="imageReady()" style="text-align: center;">
+    <h1 class="message">Tu creación:</h1>
     <img #image [src]="imageUrl()" alt="Selected Image" class="img"/>
   </div>
 
@@ -69,7 +97,7 @@
           <ion-thumbnail slot="start">
             <img
               alt="{{ item?.className }}"
-              [src]="'assets/images/' + item?.className.toLowerCase() + '.png'"
+              [src]="'assets/imgs/' + item?.className.toLowerCase() + '.jpg'"
               class="result-image"
             />
           </ion-thumbnail>
@@ -84,13 +112,15 @@
   </ion-card>
 
   <!-- SUGERENCIAS BASADAS EN LA PREDICCIÓN -->
+  <!-- SUGERENCIAS BASADAS EN LA PREDICCIÓN -->
   <ion-card *ngIf="topPrediction" class="suggestion-card">
     <ion-card-header>
-      <ion-card-title>Comentarios</ion-card-title>
+      <ion-card-title>Detalles de la Corriente</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <p>{{ suggestions[topPrediction?.className] }}</p>
     </ion-card-content>
   </ion-card>
+
 
 </ion-content>

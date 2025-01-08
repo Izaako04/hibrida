@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class TeachablemachineService {
 
-  private URL = "https://teachablemachine.withgoogle.com/models/<ID-MODELO>/"
+  private URL = "https://teachablemachine.withgoogle.com/models/WqJsHZeHu/"
   private model: any;
   private classLabels: string[] = [];
 
@@ -31,6 +31,7 @@ export class TeachablemachineService {
       return this.classLabels;
   }
 
+  /* Método para la predicción a partir de la imagen */
   async predict(imageElement: HTMLImageElement): Promise<any[]> {
 
     if (!this.model) {
