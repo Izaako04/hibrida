@@ -1,27 +1,96 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar color="primary">
-    <ion-title mode="md" class="ion-no-padding">
-      <ion-label>
-        <ion-text color="tertiary">Welcome</ion-text>
-        <p><ion-text color="white"><strong>Nikhil Ag.</strong></ion-text></p>
-      </ion-label>
-    </ion-title>
-    <ion-avatar slot="end">
-      <img src="assets/imgs/img.png" />
-    </ion-avatar>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">
 
-<ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Total Balance</ion-card-title>
-    </ion-card-header>
+  <ion-header class="ion-no-border">
+    <ion-toolbar color="primary">
+      <ion-title mode="md" class="ion-no-padding">
+        <ion-label>
+          <ion-text color="tertiary">Detector de Arte!</ion-text>
+          <p><ion-text color="white"><strong>IA-Art DETECTOR</strong></ion-text></p>
+        </ion-label>
+      </ion-title>
+      <ion-avatar slot="end">
+        <img src="assets/imgs/img.png" />
+      </ion-avatar>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- MENSAJE INICIAL - Solo se muestra si no se ha subido una imagen -->
+  <ion-card *ngIf="!imageReady()">
     <ion-card-content>
-      <ion-item>
-        <ion-label>₹200000</ion-label>
-        <ion-note>57868945098</ion-note>
-      </ion-item>
+      <h1 class="message">Te ayudamos a categorizar tu arte!</h1>
+      <img src="assets/images/imagen.jpg" alt="Imagen" class="imagen"/>
+      <p class="submessage">Sube una foto artistica y prediciremos de que corrientes tomaste influencia!</p>
     </ion-card-content>
   </ion-card>
+
+  <!-- BOTÓN PARA SUBIR IMAGEN - Solo se muestra si no se ha subido una imagen -->
+  <ion-button
+    *ngIf="!imageReady()"
+    class="upload-button"
+    expand="block"
+    (click)="fileInput.click()"
+  >
+    <ion-icon slot="start" name="cloud-upload-outline"></ion-icon>
+    Upload Photo
+  </ion-button>
+  <input
+    #fileInput
+    type="file"
+    accept="image/*"
+    (change)="onFileSelected($event)"
+    hidden
+  />
+
+  <!-- MOSTRAR IMAGEN SUBIDA - Solo se muestra si la imagen está lista -->
+  <div *ngIf="imageReady()">
+    <img #image [src]="imageUrl()" alt="Selected Image" class="img"/>
+  </div>
+
+  <!-- BOTÓN DE PREDICCIÓN - Solo se muestra si la imagen está lista -->
+  <ion-button
+    *ngIf="imageReady()"
+    class="upload-button"
+    expand="block"
+    (click)="predict()"
+  >
+    <ion-icon slot="start" name="analytics-outline"></ion-icon>
+    Identificar corrientes!
+  </ion-button>
+
+  <!-- RESULTADOS DE LA PREDICCIÓN -->
+  <ion-card *ngIf="predictions.length > 0" class="prediction-card">
+    <ion-card-header>
+      <ion-card-title>Resultados</ion-card-title>
+      <ion-card-subtitle>Corrientes Identificadas: </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list color=#f0f0f0 >
+        <ion-item *ngFor="let item of predictions; let i = index">
+          <ion-thumbnail slot="start">
+            <img
+              alt="{{ item?.className }}"
+              [src]="'assets/images/' + item?.className.toLowerCase() + '.png'"
+              class="result-image"
+            />
+          </ion-thumbnail>
+          <ion-label>
+            <p class="result-text">
+              {{ item?.className }}: {{ item?.probability | percent }}
+            </p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- SUGERENCIAS BASADAS EN LA PREDICCIÓN -->
+  <ion-card *ngIf="topPrediction" class="suggestion-card">
+    <ion-card-header>
+      <ion-card-title>Comentarios</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ suggestions[topPrediction?.className] }}</p>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

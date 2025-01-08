@@ -1,14 +1,18 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent} from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
-
+import { IonicModule } from '@ionic/angular';
+import { addIcons } from 'ionicons';
+import { medkitOutline, personCircleOutline, femaleSharp, maleSharp } from 'ionicons/icons';
 @Component({
   selector: 'app-tab4',
   templateUrl: 'tab4.page.html',
   styleUrls: ['tab4.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent],
+  imports: [
+    IonicModule
+  ],
 })
-export class Tab3Page {
-  constructor() {}
+export class Tab4Page {
+  constructor() {
+    addIcons({maleSharp,femaleSharp,personCircleOutline,medkitOutline});
+  }
 }

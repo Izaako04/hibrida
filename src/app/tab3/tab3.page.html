@@ -1,26 +1,61 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Acerca de
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title mode="md" class="ion-no-padding">
+      <ion-label>
+        <ion-text color="tertiary">Detector de Arte!</ion-text>
+        <p><ion-text color="white"><strong>IA-Art DETECTOR</strong></ion-text></p>
+      </ion-label>
     </ion-title>
+    <ion-avatar slot="end">
+      <img src="assets/imgs/img.png" />
+    </ion-avatar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-
-  <ion-card>
+<ion-content class="ion-padding" [fullscreen]="true">
+  <!-- Purpose Section -->
+  <ion-card class="custom-card">
     <ion-card-header>
-
-      <ion-card-title class="titulo">Descripción</ion-card-title>
-       
+      <ion-card-title>
+        Proposito
+      </ion-card-title>
     </ion-card-header>
-     
     <ion-card-content>
-      <p id="descripcion">
-      Una aplicación móvil desarrollada en Angular Ionic es un software multiplataforma que utiliza el framework Angular para construir la lógica y la estructura de la aplicación, junto con el framework Ionic para crear una interfaz de usuario atractiva y funcional. Ionic proporciona componentes y herramientas para diseñar aplicaciones que se sienten y se ven nativas en dispositivos iOS y Android. La aplicación se puede desplegar tanto en la web como en tiendas de aplicaciones móviles. Utiliza tecnologías web como HTML, CSS y JavaScript, lo que facilita la reutilización de código y la implementación rápida.
-      </p>
+      Aqui textaco
     </ion-card-content>
-
   </ion-card>
 
+  <!-- Mission Section -->
+  <ion-card class="custom-card">
+    <ion-card-header>
+      <ion-card-title>
+        Definicion
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      textaco!
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Members Section -->
+  <ion-card class="custom-card">
+    <ion-card-header>
+      <ion-card-title>
+        Miembros del team
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let member of members" color="transparent">
+          <ion-avatar slot="start">
+            <img [src]="member.photo" alt="Member photo" />
+          </ion-avatar>
+          <ion-label>
+            <h2>{{ member.name }}</h2>
+            <p>{{ member.role }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
