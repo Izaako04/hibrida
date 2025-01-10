@@ -11,8 +11,16 @@ import { medkitOutline, personCircleOutline, femaleSharp, maleSharp } from 'ioni
     IonicModule
   ],
 })
+
+
+
 export class Tab4Page {
   constructor() {
     addIcons({maleSharp,femaleSharp,personCircleOutline,medkitOutline});
   }
+  
+
+
+
+
 }
