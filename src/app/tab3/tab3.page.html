@@ -1,61 +1,94 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar color="primary">
-    <ion-title mode="md" class="ion-no-padding">
-      <ion-label>
-        <ion-text color="tertiary">Detector de Arte!</ion-text>
-        <p><ion-text color="white"><strong>IA-Art DETECTOR</strong></ion-text></p>
-      </ion-label>
-    </ion-title>
-    <ion-avatar slot="end">
-      <img src="assets/imgs/img.png" />
-    </ion-avatar>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding custom-content" [fullscreen]="true" class="custom-content">
+  <div class="background-container">
+    <img src="assets/imgs/fondo.jpg" alt="Fondo" class="background-image" />
+  </div>
+  
 
-<ion-content class="ion-padding" [fullscreen]="true">
-  <!-- Purpose Section -->
-  <ion-card class="custom-card">
-    <ion-card-header>
-      <ion-card-title>
-        Proposito
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Aqui textaco
-    </ion-card-content>
-  </ion-card>
+  <ion-header class="ion-no-border">
+    <ion-toolbar color="primary">
+      <ion-title mode="md" class="ion-no-padding">
+        <ion-label>
+          <ion-text color="tertiary">Detector de Arte!</ion-text>
+          <p><ion-text color="white"><strong>CORRIENTES ARTÍSTICAS</strong></ion-text></p>
+        </ion-label>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-  <!-- Mission Section -->
-  <ion-card class="custom-card">
-    <ion-card-header>
-      <ion-card-title>
-        Definicion
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      textaco!
-    </ion-card-content>
-  </ion-card>
+  <div class="grid-container">
+    <!-- Arte Naíf -->
+    <div class="grid-item">
+      <img src="assets/imgs/artenaif.jpg" alt="Arte Naíf" class="art-image"/>
+      <div class="art-info">
+        <h2 class="art-name">Arte Naíf</h2>
+        <p class="art-description">
+          Estilo artístico que enfatiza la sencillez, espontaneidad y colores vivos.
+          <br><strong>Origen:</strong> Siglo XIX, Francia.
+          <br><strong>Artistas destacados:</strong> Henri Rousseau, Grandma Moses.
+          <br><strong>Obras representativas:</strong> "El sueño" de Henri Rousseau.
+          <br><strong>Características:</strong> Uso de líneas simples, colores brillantes y temas de la vida cotidiana.
+        </p>
+      </div>
+    </div>
 
-  <!-- Members Section -->
-  <ion-card class="custom-card">
-    <ion-card-header>
-      <ion-card-title>
-        Miembros del team
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <ion-item *ngFor="let member of members" color="transparent">
-          <ion-avatar slot="start">
-            <img [src]="member.photo" alt="Member photo" />
-          </ion-avatar>
-          <ion-label>
-            <h2>{{ member.name }}</h2>
-            <p>{{ member.role }}</p>
-          </ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
+    <!-- Barroco -->
+    <div class="grid-item">
+      <img src="assets/imgs/barroco.jpg" alt="Barroco" class="art-image" />
+      <div class="art-info">
+        <h2 class="art-name">Barroco</h2>
+        <p class="art-description">
+          Caracterizado por la ornamentación, el drama y la intensidad emocional.
+          <br><strong>Origen:</strong> Siglo XVII, Europa.
+          <br><strong>Artistas destacados:</strong> Caravaggio, Bernini, Rubens.
+          <br><strong>Obras representativas:</strong> "La conversión de San Pablo" de Caravaggio.
+          <br><strong>Características:</strong> Uso de contrastes de luz y sombra (claroscuro), movimiento y detalles complejos.
+        </p>
+      </div>
+    </div>
+
+    <!-- Cubismo -->
+    <div class="grid-item">
+      <img src="assets/imgs/cubismo.jpg" alt="Cubismo" class="art-image" />
+      <div class="art-info">
+        <h2 class="art-name">Cubismo</h2>
+        <p class="art-description">
+          Movimientos artísticos que fragmentan y abstraen las formas en geometría básica.
+          <br><strong>Origen:</strong> Principios del siglo XX, Francia.
+          <br><strong>Artistas destacados:</strong> Pablo Picasso, Georges Braque.
+          <br><strong>Obras representativas:</strong> "Las señoritas de Avignon" de Picasso.
+          <br><strong>Características:</strong> Representación geométrica, perspectiva múltiple y abstracción.
+        </p>
+      </div>
+    </div>
+
+    <!-- Postimpresionismo -->
+    <div class="grid-item">
+      <img src="assets/imgs/postimpresionismo.jpg" alt="Postimpresionismo" class="art-image" />
+      <div class="art-info">
+        <h2 class="art-name">Postimpresionismo</h2>
+        <p class="art-description">
+          Un estilo que busca emociones subjetivas a través del color y la forma.
+          <br><strong>Origen:</strong> Finales del siglo XIX, Europa.
+          <br><strong>Artistas destacados:</strong> Vincent van Gogh, Paul Cézanne, Paul Gauguin.
+          <br><strong>Obras representativas:</strong> "La noche estrellada" de Van Gogh.
+          <br><strong>Características:</strong> Uso de colores intensos, pinceladas expresivas y temas personales.
+        </p>
+      </div>
+    </div>
+
+    <!-- Renacimiento -->
+    <div class="grid-item">
+      <img src="assets/imgs/renacimiento.jpg" alt="Renacimiento" class="art-image" />
+      <div class="art-info">
+        <h2 class="art-name">Renacimiento</h2>
+        <p class="art-description">
+          Un renacimiento de la cultura clásica, centrado en la humanidad y la perspectiva.
+          <br><strong>Origen:</strong> Siglos XIV-XVI, Italia.
+          <br><strong>Artistas destacados:</strong> Leonardo da Vinci, Miguel Ángel, Rafael.
+          <br><strong>Obras representativas:</strong> "La última cena" de Leonardo da Vinci.
+          <br><strong>Características:</strong> Uso de perspectiva lineal, proporción, realismo y temas clásicos.
+        </p>
+      </div>
+    </div>
+  </div>
 </ion-content>

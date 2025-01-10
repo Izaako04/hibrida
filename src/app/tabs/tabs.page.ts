@@ -1,7 +1,7 @@
 import { Component, EnvironmentInjector, inject } from '@angular/core';
 import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { triangle, ellipse, square, peopleCircle, clipboardOutline, rocket, heartCircleOutline, happyOutline, calendarOutline, peopleCircleOutline, homeOutline, pieChartOutline, colorPaletteOutline, personOutline } from 'ionicons/icons';
+import { triangle, ellipse, square, peopleCircle, clipboardOutline, rocket, heartCircleOutline, happyOutline, calendarOutline, peopleCircleOutline, homeOutline, pieChartOutline, colorPaletteOutline, personOutline, imagesOutline, cameraOutline, imageOutline, albumsOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-tabs',
@@ -14,6 +14,6 @@ export class TabsPage {
   public environmentInjector = inject(EnvironmentInjector);
 
   constructor() {
-    addIcons({homeOutline,pieChartOutline,colorPaletteOutline,personOutline,happyOutline,calendarOutline,heartCircleOutline,peopleCircleOutline,peopleCircle,rocket,clipboardOutline,triangle,ellipse,square});
+    addIcons({homeOutline,albumsOutline,colorPaletteOutline,personOutline,imageOutline,cameraOutline,imagesOutline,pieChartOutline,happyOutline,calendarOutline,heartCircleOutline,peopleCircleOutline,peopleCircle,rocket,clipboardOutline,triangle,ellipse,square});
   }
 }

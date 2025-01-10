@@ -36,4 +36,8 @@ export class Tab3Page {
       photo: 'assets/images/piero.jpg', // Replace with your image path
     },
   ];
+
+
+
+
 }
