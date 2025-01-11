@@ -37,7 +37,7 @@ ion-header {
 }
 
 .custom-content {
-    background: linear-gradient(to bottom, #f0f8ff, #e6f7f7); /* Fondo con degradado */
+    background: linear-gradient(to bottom, #f0f8ff, #e6f7f7);
   }
   
   .background-container {
@@ -77,7 +77,7 @@ ion-header {
     border-radius: 15px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 300px; /* Altura mínima de 300px */
+    min-height: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
@@ -123,7 +123,7 @@ ion-header {
   ion-header + .grid-container {
     margin-top: 20px;
   }
-/*para tamaños de pantallas pequeñas*/
+  
 @media (max-width: 768px) {
   .background-container {
     height: 15%;
