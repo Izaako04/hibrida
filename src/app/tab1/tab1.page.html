@@ -17,7 +17,7 @@
     <ion-card-content class="card-content">
       <h1 class="mensaje">¡Te ayudamos a categorizar tu arte!</h1>
       <div class="imgContainer">
-        <img src="assets/imgs/pintando.jpg" alt="Imagen" class="imagen" />
+        <img src="assets/imgs/pintando.jpg" alt="Imagen" class="imagen" height="300px"/>
       </div>
       <p class="submessage">Sube una foto artística y prediciremos de qué corrientes tomaste influencia.</p>
     </ion-card-content>
@@ -43,9 +43,6 @@
 
     <div class="identified-container">
       <h1 class="message">Corrientes Identificadas:</h1>
-      <p *ngIf="predictions.length === 0" class="hint-message" style="padding-top: 20px;">
-        Da click en <strong>¡Identificar corrientes!</strong>
-      </p>
       <ion-card *ngIf="predictions.length > 0" class="prediction-card">
         <ion-card-content>
           <ion-list>
@@ -66,6 +63,6 @@
 
   <ion-button *ngIf="imageReady() && buttonVisible" class="upload-button" expand="block" (click)="predict()">
     <ion-icon slot="start" name="analytics-outline"></ion-icon>
-    ¡Identificar corrientes!
+    Identificar
   </ion-button>
 </ion-content>

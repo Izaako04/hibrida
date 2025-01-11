@@ -1,141 +1,127 @@
+/* Estilos mejorados para el componente */
+
 .titulo {
-    color: var(--ion-color-primary);
-      font-weight: bold;
-      text-align: center;
+  color: var(--ion-color-primary);
+  font-weight: bold;
+  text-align: center;
+  font-size: 2rem; /* Aumenta el tamaño del título */
+  margin-bottom: 20px; /* Añade margen inferior */
+}
+
+p#descripcion {
+  text-align: justify;
+  font-size: 1.1rem; /* Ajusta el tamaño del texto */
+  line-height: 1.6; /* Espacio entre líneas */
+  color: #555; /* Color de texto más suave */
+}
+
+ion-header {
+  ion-toolbar {
+      --padding-start: 16px;
+      --padding-end: 16px;
+      ion-title {
+          max-width: 40vh;
+          ion-label {
+              ion-text {
+                  font-size: 1rem;
+              }
+              p {
+                  ion-text {
+                      font-size: 1.3rem !important;
+                  }
+              }
+          }
+      }
   }
-  
-  p#descripcion {
-    text-align: justify;
-  }
-  
-  ion-header {
-    ion-toolbar {
-        --padding-start: 16px;
-        --padding-end: 16px;
-        ion-title {
-            max-width: 40vh;
-            ion-label {
-                ion-text {
-                    font-size: 1rem;
-                }
-                p {
-                    ion-text {
-                        font-size: 1.3rem !important;
-                    }
-                }
-            }
-        }
-        ion-avatar {
-            height: 2.5rem;
-            width: 2.5rem;
-            border: 1px solid var(--ion-color-tertiary);
-            img {
-                max-width: 100%;
-            }
-        }
-    }
-  }
-  .background-container {
-    width: 100%;
-    height: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  .background-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .green-bar {
-    background-color: green;
-    height: 60px;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  .custom-content {
-    background: linear-gradient(to bottom, #f0f8ff, #e6f7f7); /* Fondo con degradado */
-  }
-  
-  .background-container {
-    width: 100%;
-    height: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
-  
-  .background-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .section-title {
-    font-size: 1.5rem;
-    color: #0f6061;
-    font-weight: bold;
-    text-align: center;
-    margin: 20px 0;
-  }
-  
-  .objective-container {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .objective-text {
-    font-size: 1rem;
-    color: #8f8f8f;
-    line-height: 1.6;
-  }
-  
-  .team-container {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .team-member {
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .team-member:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .member-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-  
-  .member-name {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #0f6061;
-  }
-  
-  .member-role {
-    font-size: 0.9rem;
-    color: #666;
-  }
-  
+}
+
+.background-container {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.green-bar {
+  background-color: #28a745; /* Utiliza un verde más claro */
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.custom-content {
+  background: linear-gradient(to bottom, #f0f8ff, #e6f7f7); /* Fondo con degradado */
+  padding: 20px; /* Añade padding para espacio alrededor del contenido */
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: #0f6061;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.objective-container {
+  padding: 20px;
+  text-align: justify; /* Alinea el texto de los objetivos */
+}
+
+.objective-text {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.team-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.team-member {
+  background:#0f6061;
+  border-radius: 15px; /* Redondea más las tarjetas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.member-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.member-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.member-role {
+  font-size: 1rem;
+  color: #bbdedb;
+}

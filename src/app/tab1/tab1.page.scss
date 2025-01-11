@@ -18,6 +18,21 @@ ion-header {
     }
 }
 
+
+.upload-button {
+    --border-radius: 10px; /* Bordes redondeados */
+    --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    font-weight: bold; /* Texto en negrita */
+    transition: all 0.3s ease; /* Transición suave al hacer hover */
+    max-width: 200px;
+    margin-left: 98px;
+  
+    &:hover {
+      transform: translateY(-3px); /* Levanta ligeramente el botón al hacer hover */
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al hacer hover */
+    }
+  }
+
 ion-thumbnail {
     --border-radius: 10px;
     overflow: hidden;
@@ -25,7 +40,7 @@ ion-thumbnail {
 
 .background-container {
     width: 100%;
-    height: 25%;
+    height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,8 +72,10 @@ ion-thumbnail {
 
 .imagen {
     width: 100%;
-    max-width: 500px;
+    max-width: 300px;
     height: auto;
+    border-radius: 10px;
+    border-color: teal;
 }
 
 .submessage {
@@ -106,7 +123,7 @@ ion-thumbnail {
 
 .imageR {
     width: 100%;
-    height: 100%;
+    height: 90%;
     object-fit: cover;
 }
 
