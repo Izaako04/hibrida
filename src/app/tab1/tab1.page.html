@@ -1,13 +1,13 @@
-<ion-content [fullscreen]="true" class="custom-content">
+<ion-content class="custom-content">
   <div class="background-container">
     <img src="assets/imgs/fondo.jpg" alt="Fondo" class="background-image" />
   </div>
   <ion-header class="ion-no-border">
-    <ion-toolbar color="primary">
-      <ion-title mode="md" class="ion-no-padding">
+    <ion-toolbar>
+      <ion-title mode="md">
         <ion-label>
-          <ion-text color="tertiary" >Detector de Arte!</ion-text>
-          <p><ion-text color="white"><strong>IA-Art DETECTOR</strong></ion-text></p>
+          <ion-text>Detector de Arte!</ion-text>
+          <p><ion-text><strong>IA-Art DETECTOR</strong></ion-text></p>
         </ion-label>
       </ion-title>
     </ion-toolbar>
@@ -24,7 +24,7 @@
   </ion-card>
 
   <ion-button *ngIf="!imageReady()" class="upload-button" expand="block" (click)="fileInput.click()">
-    <ion-icon slot="start" name="cloud-upload-outline"></ion-icon>
+    <ion-icon slot="start" name="cloud-upload-outline" color="white"></ion-icon>
     CARGAR IMAGEN
   </ion-button>
 
@@ -65,4 +65,10 @@
     <ion-icon slot="start" name="analytics-outline"></ion-icon>
     Identificar
   </ion-button>
+
+  <ion-button *ngIf="imageReady()" class="upload-button" expand="block" (click)="reset()">
+    <ion-icon slot="start" name="analytics-outline"></ion-icon>
+    Nuevo!
+  </ion-button>
+  
 </ion-content>

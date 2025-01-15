@@ -74,4 +74,8 @@ export class Tab1Page {
       reader.readAsDataURL(file);
     }
   }
+
+  reset() {
+    window.location.reload();
+  }
 }

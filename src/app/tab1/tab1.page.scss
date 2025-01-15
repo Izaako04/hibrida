@@ -1,4 +1,5 @@
 ion-header {
+    --ion-toolbar-background:#023435;
     ion-toolbar {
         --padding-start: 16px;
         --padding-end: 16px;
@@ -175,16 +176,199 @@ ion-thumbnail {
 }
 
 @media (max-width: 480px) {
+    ion-header {
+        --ion-toolbar-background:#023435;
+        ion-toolbar {
+            --padding-start: 16px;
+            --padding-end: 16px;
+            ion-title {
+                max-width: 40vh;
+                ion-label {
+                    
+                    ion-text {
+                        color: #01B5AA;
+                        font-size: 1rem;
+                    }
+                    p {
+                        ion-text {
+                            color: white;
+                            font-size: 1.3rem !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    .upload-button {
+        --border-radius: 10px; /* Bordes redondeados */
+        --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        font-weight: bold; /* Texto en negrita */
+        transition: all 0.3s ease; /* Transición suave al hacer hover */
+        max-width: 200px;
+        margin-left: 98px;
+        --background-color: #023435;
+      
+        &:hover {
+          transform: translateY(-3px); /* Levanta ligeramente el botón al hacer hover */
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); /* Aumenta la sombra al hacer hover */
+        }
+      }
+    
+    ion-thumbnail {
+        --border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .background-container {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    
+    .background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .card-content {
+        text-align: center;
+        background-color: var(--ion-color-light);
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .mensaje {
+        padding-bottom: 10px;
+        font-weight: bold;
+    }
+    
+    .imgContainer {
+        text-align: center;
+        padding-top: 10px;
+    }
+    
     .imagen {
         width: 100%;
-        max-width: 100%;
+        max-width: 300px;
+        height: auto;
     }
-
-    .hint-message {
-        font-size: 0.9rem;
+    
+    .submessage {
+        color: var(--ion-color-medium);
     }
-
-    ion-header ion-title {
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .creation-container, .identified-container {
+        text-align: center;
+        background-color: var(--ion-color-light);
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .prediction-container {
+        margin-top: 20px;
+    }
+    
+    .prediction-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--ion-color-dark);
+    }
+    
+    .prediction-class {
+        font-size: 1.2rem;
+        color: var(--ion-color-dark);
+    }
+    
+    .prediction-item {
+        margin-bottom: 10px;
+    }
+    
+    .thumbnail {
+        --size: 60px;
+        overflow: hidden;
+        border: 2px solid var(--ion-color-secondary);
+    }
+    
+    .imageR {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .prediccionl {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--ion-color-dark);
+    }
+    
+    .result-text {
+        margin-top: 5px;
         font-size: 1rem;
+        color: var(--ion-color-medium);
+    }
+    
+    @media (max-width: 768px) {
+        .grid-container {
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+    
+        .imagen {
+            width: 100%;
+            height: auto;
+        }
+    
+        .creation-container, .identified-container {
+            padding: 10px;
+        }
+    
+        .card-content {
+            padding: 15px;
+        }
+    
+        .mensaje {
+            font-size: 1.2rem;
+        }
+    
+        .prediction-title,
+        .prediction-class {
+            font-size: 1rem;
+        }
+    
+        .thumbnail {
+            --size: 50px;
+        }
+    
+        .result-text {
+            font-size: 0.9rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .imagen {
+            width: 100%;
+            max-width: 100%;
+        }
+    
+        .hint-message {
+            font-size: 0.9rem;
+        }
+    
+        ion-header ion-title {
+            font-size: 1rem;
+        }
     }
 }
