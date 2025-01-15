@@ -138,43 +138,6 @@ ion-thumbnail {
     color: var(--ion-color-medium);
 }
 
-@media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .imagen {
-        width: 100%;
-        height: auto;
-    }
-
-    .creation-container, .identified-container {
-        padding: 10px;
-    }
-
-    .card-content {
-        padding: 15px;
-    }
-
-    .mensaje {
-        font-size: 1.2rem;
-    }
-
-    .prediction-title,
-    .prediction-class {
-        font-size: 1rem;
-    }
-
-    .thumbnail {
-        --size: 50px;
-    }
-
-    .result-text {
-        font-size: 0.9rem;
-    }
-}
-
 @media (max-width: 480px) {
     ion-header {
         --ion-toolbar-background:#023435;
@@ -318,57 +281,5 @@ ion-thumbnail {
         margin-top: 5px;
         font-size: 1rem;
         color: var(--ion-color-medium);
-    }
-    
-    @media (max-width: 768px) {
-        .grid-container {
-            grid-template-columns: 1fr;
-            gap: 10px;
-        }
-    
-        .imagen {
-            width: 100%;
-            height: auto;
-        }
-    
-        .creation-container, .identified-container {
-            padding: 10px;
-        }
-    
-        .card-content {
-            padding: 15px;
-        }
-    
-        .mensaje {
-            font-size: 1.2rem;
-        }
-    
-        .prediction-title,
-        .prediction-class {
-            font-size: 1rem;
-        }
-    
-        .thumbnail {
-            --size: 50px;
-        }
-    
-        .result-text {
-            font-size: 0.9rem;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .imagen {
-            width: 100%;
-            max-width: 100%;
-        }
-    
-        .hint-message {
-            font-size: 0.9rem;
-        }
-    
-        ion-header ion-title {
-            font-size: 1rem;
-        }
     }
 }
