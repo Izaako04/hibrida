@@ -1,4 +1,4 @@
-<ion-content class="custom-content">
+<ion-content [fullscreen]="false">
   <div class="background-container">
     <img src="assets/imgs/fondo.jpg" alt="Fondo" class="background-image" />
   </div>
@@ -23,10 +23,12 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-button *ngIf="!imageReady()" class="upload-button" expand="block" (click)="fileInput.click()">
-    <ion-icon slot="start" name="cloud-upload-outline" color="white"></ion-icon>
-    CARGAR IMAGEN
-  </ion-button>
+  <div class="ion-text-center ion-padding-top ion-padding-bottom">
+    <ion-button *ngIf="!imageReady()" expand="block" (click)="fileInput.click()">
+      <ion-icon slot="start" name="cloud-upload-outline" color="white"></ion-icon>
+      CARGAR IMAGEN
+    </ion-button>
+  </div>
 
   <input #fileInput type="file" accept="image/*" (change)="onFileSelected($event)" hidden />
 
@@ -61,14 +63,17 @@
     </div>
   </div>
 
-  <ion-button *ngIf="imageReady() && buttonVisible" class="upload-button" expand="block" (click)="predict()">
-    <ion-icon slot="start" name="analytics-outline"></ion-icon>
-    Identificar
-  </ion-button>
+  <div class="ion-text-center ion-padding-top ion-padding-bottom">
+    <ion-button *ngIf="imageReady() && buttonVisible" class="upload-button" expand="block" (click)="predict()">
+      <ion-icon slot="start" name="analytics-outline"></ion-icon>
+      Identificar
+    </ion-button>
+  </div>
 
-  <ion-button *ngIf="imageReady()" class="upload-button" expand="block" (click)="reset()">
-    <ion-icon slot="start" name="analytics-outline"></ion-icon>
-    Nuevo!
-  </ion-button>
-  
+  <div class="ion-text-center ion-padding-top ion-padding-bottom">
+    <ion-button *ngIf="imageReady()" class="upload-button" expand="block" (click)="reset()">
+      <ion-icon slot="start" name="analytics-outline"></ion-icon>
+      Nuevo!
+    </ion-button>
+  </div>
 </ion-content>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonCardSubtitle } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, IonContent } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
     ExploreContainerComponent,
     IonicModule,
     CommonModule,
+    
   ],
 })
 export class Tab3Page {
@@ -36,8 +37,4 @@ export class Tab3Page {
       photo: 'assets/images/piero.jpg', // Replace with your image path
     },
   ];
-
-
-
-
 }

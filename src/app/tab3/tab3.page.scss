@@ -1,154 +1,45 @@
 .titulo {
-  color: var(--ion-color-primary);
-    font-weight: bold;
-    text-align: center;
-}
-
-p#descripcion {
-  text-align: justify;
-}
-
-ion-header {
-  ion-toolbar {
-      --padding-start: 16px;
-      --padding-end: 16px;
-      ion-title {
-          max-width: 40vh;
-          ion-label {
-              ion-text {
-                  font-size: 1rem;
-              }
-              p {
-                  ion-text {
-                      font-size: 1.3rem !important;
-                  }
-              }
-          }
-      }
-      ion-avatar {
-          height: 2.5rem;
-          width: 2.5rem;
-          border: 1px solid var(--ion-color-tertiary);
-          img {
-              max-width: 100%;
-          }
-      }
-  }
-}
-
-.custom-content {
-    background: linear-gradient(to bottom, #f0f8ff, #e6f7f7);
+    color: var(--ion-color-primary);
+      font-weight: bold;
+      text-align: center;
   }
   
-.background-container {
-  width: 100%;
-  height: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.background-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.green-bar {
-  background-color: green;
-  height: 60px;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px;
-}
-
-.grid-item {
-  display: flex;
-  align-items: center;
-  background: #dafff9;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  min-height: 300px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.grid-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.art-image {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 15px;
-  border: 5px solid #0f6061;
-  margin-right: 15px;
-  transition: transform 0.3s ease;
-}
-
-.grid-item:hover .art-image {
-  transform: rotate(5deg);
-}
-
-.art-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.art-name {
-  font-size: 30px; 
-  font-weight: bold;
-  margin: 0 0 5px 0;
-  color: #0f6061;
-  padding: 5px;
-  background: rgba(15, 96, 97, 0.1);
-  border-radius: 8px;
-}
-
-.art-description {
-  font-size: 1em;
-  color: #666;
-}
-
-ion-header + .grid-container {
-  margin-top: 20px;
-}
+  p#descripcion {
+    text-align: justify;
+  }
   
-@media (max-width: 768px) {
   ion-header {
-    --ion-toolbar-background:#023435;
     ion-toolbar {
         --padding-start: 16px;
         --padding-end: 16px;
         ion-title {
             max-width: 40vh;
             ion-label {
-                
                 ion-text {
-                    color: #01B5AA;
                     font-size: 1rem;
                 }
                 p {
                     ion-text {
-                        color: white;
                         font-size: 1.3rem !important;
                     }
                 }
             }
         }
+        ion-avatar {
+            height: 2.5rem;
+            width: 2.5rem;
+            border: 1px solid var(--ion-color-tertiary);
+            img {
+                max-width: 100%;
+            }
+        }
     }
   }
-
+  
+  .custom-content {
+      background: linear-gradient(to bottom, #f0f8ff, #e6f7f7);
+    }
+    
   .background-container {
     width: 100%;
     height: 10%;
@@ -157,44 +48,150 @@ ion-header + .grid-container {
     align-items: center;
     overflow: hidden;
   }
-
+  
   .background-image {
-    object-fit: cover;
-    height: 100%;
-  }
-
-  .green-bar {
-    height: 50px;
-  }
-
-  .grid-container {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 10px;
-  }
-
-  .grid-item {
-    flex-direction: column;
-    align-items: flex-start;
-    min-height: auto;
-    padding: 15px;
-  }
-
-  .art-image {
     width: 100%;
-    height: auto;
-    margin: 0 0 10px 0;
+    height: 100%;
+    object-fit: cover;
   }
-
+  
+  .green-bar {
+    background-color: green;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .grid-item {
+    display: flex;
+    align-items: center;
+    background: #dafff9;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .grid-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .art-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 5px solid #0f6061;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .grid-item:hover .art-image {
+    transform: rotate(5deg);
+  }
+  
   .art-info {
-    text-align: left;
+    display: flex;
+    flex-direction: column;
   }
-
+  
   .art-name {
-    font-size: 24px;
+    font-size: 30px; 
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    color: #0f6061;
+    padding: 5px;
+    background: rgba(15, 96, 97, 0.1);
+    border-radius: 8px;
   }
-
+  
   .art-description {
-    font-size: 0.9em;
+    font-size: 1em;
+    color: #666;
   }
-}
+  
+  ion-header + .grid-container {
+    margin-top: 20px;
+  }
+    
+  @media (max-width: 480px) {
+
+    ion-header {
+      --ion-toolbar-background:#023435;
+      ion-toolbar {
+          --padding-start: 16px;
+          --padding-end: 16px;
+          ion-title {
+              max-width: 40vh;
+              ion-label {
+                  
+                  ion-text {
+                      color: #01B5AA;
+                      font-size: 1rem;
+                  }
+                  p {
+                      ion-text {
+                          color: white;
+                          font-size: 1.3rem !important;
+                      }
+                  }
+              }
+          }
+      }
+    }
+  
+    .background-container {
+      width: 100%;
+      height: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+  
+    .green-bar {
+      height: 50px;
+    }
+  
+    .grid-container {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 10px;
+    }
+  
+    .grid-item {
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: auto;
+      padding: 15px;
+    }
+  
+    .art-image {
+      width: 100%;
+      height: auto;
+      margin: 0 0 10px 0;
+    }
+  
+    .art-info {
+      text-align: left;
+    }
+  
+    .art-name {
+      font-size: 24px;
+    }
+  
+    .art-description {
+      font-size: 0.9em;
+    }
+  }
+  
