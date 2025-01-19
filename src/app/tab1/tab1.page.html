@@ -51,19 +51,35 @@
       <ion-card *ngIf="predictions.length > 0" class="prediction-card">
         <ion-card-content>
           <ion-list>
-
             <ion-item *ngFor="let item of predictions; let i = index" lines="none" class="prediction-item">
               <ion-thumbnail slot="start" class="thumbnail">
                 <img id="imgR" alt="{{ item?.className }}" [src]="'assets/imgs/' + item?.className.toLowerCase() + '.jpg'" />
               </ion-thumbnail>
-
+          
               <ion-label>
-                <h2 class="prediccionl">{{ item?.className }}</h2>
+                <h2 class="prediccionl">
+                  <!-- Agregar hipervínculos según la corriente artística -->
+                  <a *ngIf="item?.className === 'renacimiento'" href="https://www.youtube.com/watch?v=f-n0PGITuD0" target="_blank">
+                    {{ item?.className }}
+                  </a>
+                  <a *ngIf="item?.className === 'barroco'" href="https://www.youtube.com/watch?v=MjOQ_S_L0u4" target="_blank">
+                    {{ item?.className }}
+                  </a>
+                  <a *ngIf="item?.className === 'postimpresionismo'" href="https://www.youtube.com/watch?v=LgWokmYw4yo" target="_blank">
+                    {{ item?.className }}
+                  </a>
+                  <a *ngIf="item?.className === 'cubismo'" href="https://www.youtube.com/watch?v=0peqswCkS5I" target="_blank">
+                    {{ item?.className }}
+                  </a>
+                  <a *ngIf="item?.className === 'arteNaif'" href="https://www.youtube.com/watch?v=CCkkPn0QseM" target="_blank">
+                    {{ item?.className }}
+                  </a>
+                </h2>
                 <p class="result-text">Probabilidad: {{ item?.probability | percent }}</p>
               </ion-label>
-
             </ion-item>
           </ion-list>
+          
         </ion-card-content>
       </ion-card>
 
